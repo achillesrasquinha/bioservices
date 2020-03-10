@@ -120,11 +120,13 @@ class Service(object):
         self.logging = Logging("bioservices:%s" % self.name, verbose)
 
         self._url = url
-        try:
-            if self.url is not None:
-                urlopen(self.url)
-        except Exception as err:
-            self.logging.warning("The URL (%s) provided cannot be reached." % self.url)
+        
+        if self.url is not None:
+            response = requests.head(self.url)
+            
+            if not response.ok:
+                self.logging.warning("The URL (%s) provided cannot be reached." % self.url)
+
         self._easyXMLConversion = True
 
         # used by HGNC where some XML contains non-utf-8 characters !!
