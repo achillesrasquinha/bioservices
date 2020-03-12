@@ -155,6 +155,8 @@ from .muscle import *
 from . import dbfetch
 from .dbfetch import *
 
+from . import cellcollective
+from .cellcollective import *
 
 # sub packages inside bioservices.
 
