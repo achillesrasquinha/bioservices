@@ -134,9 +134,6 @@ from .ncbiblast import *
 from . import biogrid
 from .biogrid import *
 
-from . import miriam
-from .miriam import *
-
 from . import arrayexpress
 from .arrayexpress import *
 
@@ -157,6 +154,9 @@ from .dbfetch import *
 
 from . import cellcollective
 from .cellcollective import *
+
+from . import bigg
+from .bigg import BiGG
 
 # sub packages inside bioservices.
 
